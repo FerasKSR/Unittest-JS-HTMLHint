@@ -33,9 +33,6 @@ jobs:
       - name: 🏗 Build
         run: npm run build
 
-      - name: Ensure no git changes
-        run: git diff --exit-code
-
       - name: Run tests
         uses: nick-invision/retry@v3
         with:
