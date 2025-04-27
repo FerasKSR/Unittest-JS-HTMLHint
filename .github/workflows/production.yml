@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - 23
+          - 18
         os: [ubuntu-latest]
 
     steps:
@@ -38,10 +38,10 @@ jobs:
         with:
           timeout_minutes: 20
           max_attempts: 3
-          command: npm run test
+          command: npm run test:coverage
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
-          path: ./coverage
+          path: ./
